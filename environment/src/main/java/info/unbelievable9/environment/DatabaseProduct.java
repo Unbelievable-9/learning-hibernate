@@ -13,24 +13,26 @@ public enum DatabaseProduct {
     H2(
             (poolingDataSource, connectionURL) -> {
                 poolingDataSource.setClassName("org.h2.jdbcx.JdbcDataSource");
+
+                poolingDataSource.getDriverProperties().put("user", "sa");
                 poolingDataSource.getDriverProperties().put(
                         "URL",
                         connectionURL != null ? connectionURL : "jdbc:h2:mem:test");
-
-                poolingDataSource.getDriverProperties().put("user", "sa");
             },
             ImprovedH2Dialect.class.getName()
     ),
 
     MYSQL(
             (poolingDataSource, connectionURL) -> {
-                poolingDataSource.setClassName("bitronix.tm.resource.jdbc.lrc.LrcXADataSource");
+                // Use latest MySQL XA support, no need to set driver class name.
+                poolingDataSource.setClassName("com.mysql.cj.jdbc.MysqlXADataSource");
+
+                poolingDataSource.getDriverProperties().put("user", "demo");
+                poolingDataSource.getDriverProperties().put("password", "demo");
                 poolingDataSource.getDriverProperties().put(
                         "url",
-                        connectionURL != null ? connectionURL : "jdbc:mysql://localhost:3306/test?sessionVariables=sql_mode='PIPES_AS_CONCAT'"
+                        connectionURL != null ? connectionURL : "jdbc:mysql://localhost:3306/hibernate"
                 );
-
-                poolingDataSource.getDriverProperties().put("driverClassName", "com.mysql.cj.jdbc.Driver");
             },
             MySQL57Dialect.class.getName()
     );

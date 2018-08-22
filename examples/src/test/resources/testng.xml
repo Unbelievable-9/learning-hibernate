@@ -7,6 +7,8 @@
             <selector-class name="info.unbelievable9.shared.util.DatabaseTestMethodSelector"/>
         </method-selector>
     </method-selectors>
+
+    <parameter name="database" value="mysql"/>
     
     <test name="Hello World">
         <packages>
