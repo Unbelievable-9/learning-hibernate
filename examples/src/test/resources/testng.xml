@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Learning Hibernate Tests">
+    
+    <method-selectors>
+        <method-selector>
+            <selector-class name="info.unbelievable9.shared.util.DatabaseTestMethodSelector"/>
+        </method-selector>
+    </method-selectors>
+    
+    <test name="Hello World">
+        <packages>
+            <package name="info.unbelievable9.examples.helloword"/>
+        </packages>
+    </test>
+</suite>

@@ -1,11 +1,10 @@
-package info.unbelievable9.env;
+package info.unbelievable9.environment;
 
 import bitronix.tm.TransactionManagerServices;
 import bitronix.tm.resource.jdbc.PoolingDataSource;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.naming.Name;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import javax.transaction.Status;
@@ -21,18 +20,18 @@ public class TransactionManagerSetup {
 
     private static final Logger logger = Logger.getLogger(TransactionManagerSetup.class.getName());
 
-    protected final Context context = new InitialContext();
-    protected final PoolingDataSource poolingDataSource;
+    private final Context context = new InitialContext();
+    private final PoolingDataSource poolingDataSource;
 
-    public static final String DATASOURCE_NAME = "hiberndateDS";
-    public final DatabaseProduct databaseProduct;
+    private static final String DATASOURCE_NAME = "helloWorldDS";
+    private final DatabaseProduct databaseProduct;
 
 
     public TransactionManagerSetup(DatabaseProduct databaseProduct) throws NamingException {
         this(databaseProduct, null);
     }
 
-    public TransactionManagerSetup(DatabaseProduct databaseProduct, String connectionURL) throws NamingException {
+    TransactionManagerSetup(DatabaseProduct databaseProduct, String connectionURL) throws NamingException {
         logger.fine("Starting database connection pool");
 
         logger.fine("Setting stable unique identifier for transaction recovery");
@@ -64,7 +63,7 @@ public class TransactionManagerSetup {
         poolingDataSource.init();
     }
 
-    public Context getNameContext() {
+    private Context getNameContext() {
         return context;
     }
 
@@ -102,7 +101,7 @@ public class TransactionManagerSetup {
         }
     }
 
-    public void stop() {
+    void stop() {
         logger.fine("Stopping database connection pool");
         poolingDataSource.close();
         TransactionManagerServices.getTransactionManager().shutdown();

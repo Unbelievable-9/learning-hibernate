@@ -1,4 +1,4 @@
-package info.unbelievable9.env;
+package info.unbelievable9.environment;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -14,7 +14,7 @@ import java.util.Locale;
  **/
 public class TransactionManagerTest {
 
-    private static TransactionManagerSetup transactionManagerSetup;
+    protected static TransactionManagerSetup transactionManagerSetup;
 
     @Parameters({"database", "connectionURL"})
     @BeforeSuite

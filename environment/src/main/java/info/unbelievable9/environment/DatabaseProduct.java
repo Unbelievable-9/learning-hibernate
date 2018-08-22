@@ -1,8 +1,8 @@
-package info.unbelievable9.env;
+package info.unbelievable9.environment;
 
 import bitronix.tm.resource.jdbc.PoolingDataSource;
 import info.unbelievable9.shared.ImprovedH2Dialect;
-import org.hibernate.dialect.MySQL57InnoDBDialect;
+import org.hibernate.dialect.MySQL57Dialect;
 
 /**
  * Created on : 2018/8/8
@@ -17,7 +17,7 @@ public enum DatabaseProduct {
                         "URL",
                         connectionURL != null ? connectionURL : "jdbc:h2:mem:test");
 
-                poolingDataSource.getDriverProperties().put("user", "jack");
+                poolingDataSource.getDriverProperties().put("user", "sa");
             },
             ImprovedH2Dialect.class.getName()
     ),
@@ -32,7 +32,7 @@ public enum DatabaseProduct {
 
                 poolingDataSource.getDriverProperties().put("driverClassName", "com.mysql.cj.jdbc.Driver");
             },
-            MySQL57InnoDBDialect.class.getName()
+            MySQL57Dialect.class.getName()
     );
 
     public DatasSourceConfiguration datasSourceConfiguration;

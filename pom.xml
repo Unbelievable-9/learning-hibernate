@@ -5,12 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>info.unbelievable9</groupId>
-    <artifactId>hibernate</artifactId>
+    <artifactId>learning-hibernate</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Learning-Hibernate</name>
-
     <developers>
         <developer>
             <email>zhaoliyang19901017@gmail.com</email>
@@ -24,16 +23,19 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <javax-el.version>3.0.0</javax-el.version>
+        <javax-validation.version>2.0.1.Final</javax-validation.version>
 
         <hibernate.version>5.3.4.Final</hibernate.version>
         <hibernate.validator.version>6.0.11.Final</hibernate.validator.version>
+        <hibernate.jpa.api.version>1.0.2.Final</hibernate.jpa.api.version>
 
         <h2.version>1.4.197</h2.version>
         <mysql.version>8.0.12</mysql.version>
 
         <bitronix.version>2.1.4</bitronix.version>
 
-        <wildfly.version>1.2.2</wildfly.version>
+        <wildfly.version>12.0.0.Final</wildfly.version>
+        <wildfly.plguin.version>1.2.2.Final</wildfly.plguin.version>
 
         <testng.version>6.14.3</testng.version>
 
@@ -66,7 +68,7 @@
                 <plugin>
                     <groupId>org.wildfly.plugins</groupId>
                     <artifactId>wildfly-maven-plugin</artifactId>
-                    <version>${wildfly.version}</version>
+                    <version>${wildfly.plguin.version}</version>
                     <configuration>
                         <detail>true</detail>
                         <force>true</force>
@@ -104,6 +106,17 @@
     </build>
 
     <profiles>
-
+        <profile>
+            <id>examples</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>shared</module>
+                <module>environment</module>
+                <module>models</module>
+                <module>examples</module>
+            </modules>
+        </profile>
     </profiles>
 </project>
