@@ -8,7 +8,7 @@
         </method-selector>
     </method-selectors>
 
-    <parameter name="database" value="mysql"/>
+    <parameter name="database" value="MYSQL"/>
     
     <test name="Hello World">
         <packages>

@@ -30,13 +30,7 @@ public class DatabaseTestMethodSelector implements IMethodSelector {
             return true;
         }
 
-        String database = System.getProperty("database");
-
-        if (database == null && containsString(groups, "H2")) {
-            return true;
-        }
-
-        if (database != null && containsString(groups, database)) {
+        if (containsString(groups, "H2") || containsString(groups, "MYSQL")) {
             return true;
         }
 

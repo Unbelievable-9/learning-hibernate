@@ -18,7 +18,7 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class HelloWorldJPATest extends TransactionManagerTest {
 
-    @Test()
+    @Test(groups = {"mysql"})
     public void storedAndLoadMessage() throws Exception {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HelloWorldPU");
 
