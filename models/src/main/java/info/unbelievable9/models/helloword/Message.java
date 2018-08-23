@@ -1,4 +1,4 @@
-package info.unbelievable9.model.helloword;
+package info.unbelievable9.models.helloword;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

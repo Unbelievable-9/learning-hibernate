@@ -9,7 +9,7 @@
     <persistence-unit name="HelloWorldPU">
         <jta-data-source>helloWorldDS</jta-data-source>
 
-        <class>info.unbelievable9.model.helloword.Message</class>
+        <class>info.unbelievable9.models.helloword.Message</class>
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 

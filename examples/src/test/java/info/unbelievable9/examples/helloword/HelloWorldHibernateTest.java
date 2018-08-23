@@ -1,7 +1,7 @@
 package info.unbelievable9.examples.helloword;
 
 import info.unbelievable9.environment.TransactionManagerTest;
-import info.unbelievable9.model.helloword.Message;
+import info.unbelievable9.models.helloword.Message;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataBuilder;
