@@ -18,7 +18,7 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class HelloWorldJPATest extends TransactionManagerTest {
 
-    @Test(groups = {"mysql"})
+    @Test()
     public void storedAndLoadMessage() throws Exception {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HelloWorldPU");
 
@@ -31,7 +31,7 @@ public class HelloWorldJPATest extends TransactionManagerTest {
                 EntityManager entityManager = entityManagerFactory.createEntityManager();
 
                 Message message = new Message();
-                message.setText("Hello World!");
+                message.setText("Hello world from JPA!");
 
                 entityManager.persist(message);
 
@@ -50,9 +50,9 @@ public class HelloWorldJPATest extends TransactionManagerTest {
                 List<Message> messageList = entityManager.createQuery("select m from Message m").getResultList();
 
                 Assert.assertEquals(messageList.size(), 1);
-                Assert.assertEquals(messageList.get(0).getText(), "Hello World!");
+                Assert.assertEquals(messageList.get(0).getText(), "Hello world from JPA!");
 
-                messageList.get(0).setText("We will dive into Hibernate!");
+                messageList.get(0).setText("We will dive into Hibernate soon!");
 
                 userTransaction.commit();
 
@@ -60,7 +60,7 @@ public class HelloWorldJPATest extends TransactionManagerTest {
             }
 
             {
-                // Validate New Message
+                // Validate new message
                 UserTransaction userTransaction = transactionManagerSetup.getUserTransaction();
                 userTransaction.begin();
 
@@ -68,7 +68,7 @@ public class HelloWorldJPATest extends TransactionManagerTest {
 
                 List<Message> messageList = entityManager.createQuery("select m from Message m").getResultList();
 
-                Assert.assertEquals(messageList.get(0).getText(), "We will dive into Hibernate!");
+                Assert.assertEquals(messageList.get(0).getText(), "We will dive into Hibernate soon!");
 
                 userTransaction.commit();
 
