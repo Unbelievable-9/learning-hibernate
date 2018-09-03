@@ -63,10 +63,10 @@ public class ModelsOperationTest {
 
         // Retrieve violation property
         ConstraintViolation<Item> constraintViolation = violationSet.iterator().next();
-        String violatedPropoerty = constraintViolation.getPropertyPath().iterator().next().getName();
+        String violatedProperty = constraintViolation.getPropertyPath().iterator().next().getName();
 
         // Check again
-        Assert.assertEquals(violatedPropoerty, "auctionEnd");
+        Assert.assertEquals(violatedProperty, "auctionEnd");
         Assert.assertEquals(constraintViolation.getMessage(), "Auction end time must be in future.");
     }
 }
