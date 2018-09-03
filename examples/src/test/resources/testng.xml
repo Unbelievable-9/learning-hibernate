@@ -15,4 +15,10 @@
             <package name="info.unbelievable9.examples.helloword"/>
         </packages>
     </test>
+
+    <test name="Simple">
+        <packages>
+            <package name="info.unbelievable9.examples.simple"/>
+        </packages>
+    </test>
 </suite>

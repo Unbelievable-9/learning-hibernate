@@ -1,4 +1,4 @@
-package info.unbelievable9.shared;
+package info.unbelievable9.shared.util;
 
 import org.hibernate.dialect.H2Dialect;
 import org.hibernate.dialect.function.StandardSQLFunction;

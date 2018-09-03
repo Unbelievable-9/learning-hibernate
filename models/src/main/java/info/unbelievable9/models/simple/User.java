@@ -1,7 +1,5 @@
 package info.unbelievable9.models.simple;
 
-import info.unbelievable9.models.Constants;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,7 +15,7 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(generator = Constants.ID_GENERATOR)
+    @GeneratedValue(generator = "ID_GENERATOR")
     protected Long id;
 
     protected String username;
@@ -33,4 +31,6 @@ public class User implements Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
+
+
 }

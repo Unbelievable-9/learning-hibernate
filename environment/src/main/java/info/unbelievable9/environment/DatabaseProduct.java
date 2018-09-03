@@ -1,7 +1,7 @@
 package info.unbelievable9.environment;
 
 import bitronix.tm.resource.jdbc.PoolingDataSource;
-import info.unbelievable9.shared.ImprovedH2Dialect;
+import info.unbelievable9.shared.util.ImprovedH2Dialect;
 import org.hibernate.dialect.MySQL57Dialect;
 
 /**

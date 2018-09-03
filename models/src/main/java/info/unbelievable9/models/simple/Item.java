@@ -1,7 +1,5 @@
 package info.unbelievable9.models.simple;
 
-import info.unbelievable9.models.Constants;
-
 import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
@@ -20,14 +18,14 @@ import java.util.Set;
 public class Item implements Serializable {
 
     @Id
-    @GeneratedValue(generator = Constants.ID_GENERATOR)
+    @GeneratedValue(generator = "ID_GENERATOR")
     protected Long id;
 
     @NotNull
     @Size(min = 2, max = 255, message = "Item name is required, maximum 255 characters.")
     protected String name;
 
-    @Future(message = "Action end time must be in future.")
+    @Future(message = "Auction end time must be in future.")
     protected LocalDateTime auctionEnd;
 
     @Transient
