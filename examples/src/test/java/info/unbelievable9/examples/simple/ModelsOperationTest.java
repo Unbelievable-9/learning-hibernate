@@ -9,7 +9,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Set;
 
 /**
@@ -53,7 +53,7 @@ public class ModelsOperationTest {
         // Create an item
         Item item = new Item();
         item.setName("Test item");
-        item.setAuctionEnd(LocalDateTime.now());
+        item.setAuctionEnd(new Date());
 
         // Manually validate item
         Set<ConstraintViolation<Item>> violationSet = validator.validate(item);

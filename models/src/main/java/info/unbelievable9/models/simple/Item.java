@@ -1,11 +1,14 @@
 package info.unbelievable9.models.simple;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +17,6 @@ import java.util.Set;
  * Author     : Unbelievable9
  **/
 @Entity
-@Table(name = "ITEMS")
 public class Item implements Serializable {
 
     @Id
@@ -26,7 +28,7 @@ public class Item implements Serializable {
     protected String name;
 
     @Future(message = "Auction end time must be in future.")
-    protected LocalDateTime auctionEnd;
+    protected Date auctionEnd;
 
     @Transient
     protected Set<Bid> bids = new HashSet<>();
@@ -43,11 +45,11 @@ public class Item implements Serializable {
         this.name = name;
     }
 
-    public LocalDateTime getAuctionEnd() {
+    public Date getAuctionEnd() {
         return auctionEnd;
     }
 
-    public void setAuctionEnd(LocalDateTime auctionEnd) {
+    public void setAuctionEnd(Date auctionEnd) {
         this.auctionEnd = auctionEnd;
     }
 

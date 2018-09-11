@@ -13,9 +13,9 @@ public class Message {
 
     @Id
     @GeneratedValue()
-    private Long id;
+    protected Long id;
 
-    private String text;
+    protected String text;
 
     public void setText(String text) {
         this.text = text;

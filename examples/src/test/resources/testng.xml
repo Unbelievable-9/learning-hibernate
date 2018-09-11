@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Learning Hibernate Tests">
-    
+
     <method-selectors>
         <method-selector>
             <selector-class name="info.unbelievable9.shared.util.DatabaseTestMethodSelector"/>
@@ -9,7 +9,7 @@
     </method-selectors>
 
     <parameter name="database" value="MYSQL"/>
-    
+
     <test name="Hello World">
         <packages>
             <package name="info.unbelievable9.examples.helloword"/>
@@ -21,4 +21,5 @@
             <package name="info.unbelievable9.examples.simple"/>
         </packages>
     </test>
+
 </suite>
