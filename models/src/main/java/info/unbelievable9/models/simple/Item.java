@@ -1,9 +1,6 @@
 package info.unbelievable9.models.simple;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -17,6 +14,7 @@ import java.util.Set;
  * Author     : Unbelievable9
  **/
 @Entity
+@Table(name = "ITEMS")
 public class Item implements Serializable {
 
     @Id

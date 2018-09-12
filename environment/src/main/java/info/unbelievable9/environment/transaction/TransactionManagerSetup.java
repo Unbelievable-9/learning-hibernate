@@ -1,7 +1,8 @@
-package info.unbelievable9.environment;
+package info.unbelievable9.environment.transaction;
 
 import bitronix.tm.TransactionManagerServices;
 import bitronix.tm.resource.jdbc.PoolingDataSource;
+import info.unbelievable9.environment.db.DatabaseProduct;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -24,8 +25,8 @@ public class TransactionManagerSetup {
     private final PoolingDataSource poolingDataSource;
 
     private static final String DATASOURCE_NAME = "helloWorldDS";
-    private final DatabaseProduct databaseProduct;
 
+    public final DatabaseProduct databaseProduct;
 
     public TransactionManagerSetup(DatabaseProduct databaseProduct) throws NamingException {
         this(databaseProduct, null);

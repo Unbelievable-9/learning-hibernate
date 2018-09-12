@@ -1,6 +1,6 @@
 package info.unbelievable9.examples.helloword;
 
-import info.unbelievable9.environment.TransactionManagerTest;
+import info.unbelievable9.environment.transaction.TransactionManagerTestBase;
 import info.unbelievable9.models.helloword.Message;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -20,7 +20,7 @@ import java.util.List;
  * Created on : 2018/8/23
  * Author     : Unbelievable9
  **/
-public class HelloWorldHibernateTest extends TransactionManagerTest {
+public class HelloWorldHibernateTestBase extends TransactionManagerTestBase {
 
     /**
      * Create Hibernate Session Factory

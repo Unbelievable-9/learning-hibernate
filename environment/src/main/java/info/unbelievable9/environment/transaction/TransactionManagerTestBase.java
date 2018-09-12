@@ -1,5 +1,6 @@
-package info.unbelievable9.environment;
+package info.unbelievable9.environment.transaction;
 
+import info.unbelievable9.environment.db.DatabaseProduct;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
@@ -12,7 +13,7 @@ import java.util.Locale;
  * Created on : 2018/8/8
  * Author     : Unbelievable9
  **/
-public class TransactionManagerTest {
+public class TransactionManagerTestBase {
 
     protected static TransactionManagerSetup transactionManagerSetup;
 

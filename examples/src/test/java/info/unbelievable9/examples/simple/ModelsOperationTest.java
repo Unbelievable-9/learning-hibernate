@@ -18,7 +18,7 @@ import java.util.Set;
  **/
 public class ModelsOperationTest {
 
-    @Test
+    @Test(enabled = false)
     public void linkItemAndBids() {
         Item item = new Item();
         Bid firstBid = new Bid();
@@ -45,7 +45,7 @@ public class ModelsOperationTest {
     /**
      * Custom validator test
      */
-    @Test
+    @Test(enabled = false)
     public void validateItem() {
         ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
         Validator validator = validatorFactory.getValidator();

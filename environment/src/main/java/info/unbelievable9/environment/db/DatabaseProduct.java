@@ -1,4 +1,4 @@
-package info.unbelievable9.environment;
+package info.unbelievable9.environment.db;
 
 import bitronix.tm.resource.jdbc.PoolingDataSource;
 import info.unbelievable9.shared.util.ImprovedH2Dialect;

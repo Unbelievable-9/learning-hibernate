@@ -1,6 +1,6 @@
 package info.unbelievable9.examples.helloword;
 
-import info.unbelievable9.environment.TransactionManagerTest;
+import info.unbelievable9.environment.transaction.TransactionManagerTestBase;
 import info.unbelievable9.models.helloword.Message;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,7 +16,7 @@ import java.util.List;
  * Author     : Unbelievable9
  **/
 @SuppressWarnings("unchecked")
-public class HelloWorldJPATest extends TransactionManagerTest {
+public class HelloWorldJPATestBase extends TransactionManagerTestBase {
 
     @Test()
     public void storedAndLoadMessage() throws Exception {

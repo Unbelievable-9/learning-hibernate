@@ -9,8 +9,9 @@
     </method-selectors>
 
     <parameter name="database" value="MYSQL"/>
+    <parameter name="keepSchema" value="true"/>
 
-    <test name="Hello World">
+    <test name="Hello World" enabled="false">
         <packages>
             <package name="info.unbelievable9.examples.helloword"/>
         </packages>
