@@ -20,7 +20,7 @@ public class HelloWorldJPATest extends TransactionManagerTest {
 
     @Test()
     public void storedAndLoadMessage() throws Exception {
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HelloWorldPU");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("SimpleXMLOverridePU");
 
         try {
             {

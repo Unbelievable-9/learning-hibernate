@@ -17,7 +17,17 @@
 
     </persistence-unit-metadata>
 
-    <!-- Entry for Item -->
+    <!-- Message -->
+    <entity class="info.unbelievable9.models.helloword.Message" access="FIELD">
+        <attributes>
+            <id name="id">
+                <generated-value strategy="AUTO"/>
+            </id>
+            <basic name="text"/>
+        </attributes>
+    </entity>
+
+    <!-- Item -->
     <entity class="info.unbelievable9.models.simple.Item" access="FIELD">
         <attributes>
             <id name="id">

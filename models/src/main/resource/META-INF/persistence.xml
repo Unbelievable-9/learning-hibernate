@@ -29,6 +29,7 @@
         <mapping-file>simple/Queries.xml</mapping-file>
 
         <properties>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="hibernate.archive.autodetection" value="none"/>
         </properties>
     </persistence-unit>
@@ -37,8 +38,14 @@
         <jta-data-source>helloWorldDS</jta-data-source>
         <mapping-file>simple/MappingsOverride.xml</mapping-file>
         <mapping-file>simple/Queries.xml</mapping-file>
+        <class>info.unbelievable9.models.helloword.Message</class>
         <class>info.unbelievable9.models.simple.Item</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="hibernate.archive.autodetection" value="none"/>
+        </properties>
     </persistence-unit>
 
 </persistence>

@@ -7,7 +7,7 @@
 
     <named-query name="findItems">
         <query>
-            <![CDATA[select i from item i]]>
+            <![CDATA[select i from Item i]]>
         </query>
     </named-query>
 
