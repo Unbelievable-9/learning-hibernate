@@ -16,7 +16,7 @@ import java.util.Set;
  * Created on : 2018/9/3
  * Author     : Unbelievable9
  **/
-public class ModelsOperationTest {
+public class ModelOperationTest {
 
     @Test(enabled = false)
     public void linkItemAndBids() {
@@ -68,5 +68,10 @@ public class ModelsOperationTest {
         // Check again
         Assert.assertEquals(violatedProperty, "auctionEnd");
         Assert.assertEquals(constraintViolation.getMessage(), "Auction end time must be in future.");
+    }
+
+    @Test
+    public void queryItem() {
+
     }
 }

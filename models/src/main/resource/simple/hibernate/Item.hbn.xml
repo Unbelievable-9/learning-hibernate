@@ -15,7 +15,6 @@
     <!-- Query -->
     <query name="findItemsByHibernate">select i from Item i</query>
 
-
     <!-- MySQL DDL-->
     <database-object>
         <create>create index ITEM_NAME_IDX on ITEM(NAME)</create>
