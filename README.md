@@ -64,12 +64,13 @@ public abstract class Item_ {
 最后查了很久原因，发现是跟验证相关的两个包的版本问题
 
 - javax-validation.version: ~~2.0.x.Final~~ **1.x.x.Final**
-- hibernate.validator.version ~~6.0.x.Final~~ **5.x.x.Final**
+- hibernate.validator.version: ~~6.0.x.Final~~ **5.x.x.Final**
 
 回退到低版本的包，生成 Metamodel 元数据就没有问题，猜测是 apt 相关的部分还没有对新版验证包进行适配。
 
 另外说到 Java 的 apt (Annotation Processing Tool), 我在本机上尝试体验下，
-结果发现 apt 已经不在 JDK8 的可执行文件中，经过一番搜索发现 apt 在 JDK7 之后已经被废弃
-[apt deprecated](http://openjdk.java.net/jeps/117)
+结果发现 apt 已经不在 JDK 8 的可执行文件中，经过一番搜索发现 apt 在 JDK 7 之后已经被废弃
+
+[apt API deprecated in JDK 7](http://openjdk.java.net/jeps/117)
 
 
