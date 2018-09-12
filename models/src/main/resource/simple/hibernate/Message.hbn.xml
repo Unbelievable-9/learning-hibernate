@@ -1,0 +1,18 @@
+<hibernate-mapping
+        xmlns="http://www.hibernate.org/xsd/orm/hbm"
+        package="info.unbelievable9.models.helloword"
+        default-access="field">
+
+    <!-- Entity class mapping -->
+    <class name="Message">
+        <id>
+            <generator class="native"/>
+        </id>
+        <property name="text"/>
+    </class>
+
+    <!-- Query -->
+    <query name="findMessageByHibernate">select m from Message m</query>
+
+
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<hibernate-mapping
+        xmlns="http://www.hibernate.org/xsd/orm/hbm"
+        package="info.unbelievable9.models.simple"
+        default-access="field">
+
+    <!-- Entity class mapping -->
+    <class name="Item">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="name"/>
+        <property name="auctionEnd" type="timestamp"/>
+    </class>
+
+    <!-- Query -->
+    <query name="findItemsByHibernate">select i from Item i</query>
+
+
+    <!-- MySQL DDL-->
+    <database-object>
+        <create>create index ITEM_NAME_IDX on ITEM(NAME)</create>
+        <drop>drop index if exists ITEM_NAME_IDX</drop>
+    </database-object>
+
+</hibernate-mapping>
