@@ -69,9 +69,4 @@ public class ModelOperationTest {
         Assert.assertEquals(violatedProperty, "auctionEnd");
         Assert.assertEquals(constraintViolation.getMessage(), "Auction end time must be in future.");
     }
-
-    @Test
-    public void queryItem() {
-
-    }
 }

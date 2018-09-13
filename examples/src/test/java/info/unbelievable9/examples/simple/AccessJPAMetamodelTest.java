@@ -26,7 +26,7 @@ public class AccessJPAMetamodelTest extends JPATestBase {
 
     @Override
     public void configurePersistenceUnit() {
-        configurePersistenceUnit("SimpleXMLCompletePU");
+        configurePersistenceUnit("SimpleHibernatePU");
     }
 
     @Test
@@ -37,9 +37,20 @@ public class AccessJPAMetamodelTest extends JPATestBase {
 
         Set<ManagedType<?>> managedTypeSet = metamodel.getManagedTypes();
 
-        Assert.assertEquals(managedTypeSet.size(), 1);
+        Assert.assertEquals(managedTypeSet.size(), 2);
 
-        ManagedType itemType = managedTypeSet.iterator().next();
+        ManagedType itemType = null;
+
+        for (ManagedType<?> managedType : managedTypeSet) {
+            if (managedType.getJavaType().getName().contains("simple.Item")) {
+                itemType = managedType;
+
+                break;
+            }
+        }
+
+        Assert.assertNotNull(itemType);
+
         Assert.assertEquals(itemType.getPersistenceType(), Type.PersistenceType.ENTITY);
         Assert.assertEquals(itemType.getDeclaredAttributes().size(), 3);
 

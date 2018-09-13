@@ -50,9 +50,14 @@
 
     <persistence-unit name="SimpleHibernatePU">
         <jta-data-source>helloWorldDS</jta-data-source>
+        <mapping-file>simple/jpa/Queries.xml</mapping-file>
+        <class>info.unbelievable9.models.simple.Item</class>
+        <class>info.unbelievable9.models.other.Item</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
-            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="hibernate.use_identifier_rollback" value="true"/>
+            <property name="hibernate.physical_naming_strategy" value="info.unbelievable9.shared.util.CENamingStrategy"/>
         </properties>
     </persistence-unit>
 
