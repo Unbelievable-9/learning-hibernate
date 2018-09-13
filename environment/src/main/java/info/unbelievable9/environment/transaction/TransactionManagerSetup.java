@@ -24,7 +24,7 @@ public class TransactionManagerSetup {
     private final Context context = new InitialContext();
     private final PoolingDataSource poolingDataSource;
 
-    private static final String DATASOURCE_NAME = "helloWorldDS";
+    private static final String DATASOURCE_NAME = "basicDS";
 
     public final DatabaseProduct databaseProduct;
 

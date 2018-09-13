@@ -1,4 +1,4 @@
-package info.unbelievable9.models.simple;
+package info.unbelievable9.models.advanced;
 
 import info.unbelievable9.models.common.Constants;
 
@@ -6,33 +6,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
 
 /**
- * Created on : 2018/8/23
+ * Created on : 2018/9/13
  * Author     : Unbelievable9
  **/
 @Entity
 @Table(name = "USERS")
-public class User implements Serializable {
+public class User {
 
     @Id
     @GeneratedValue(generator = Constants.ID_GENERATOR)
     protected Long id;
 
-    protected String username;
+    protected Address address;
 
     public Long getId() {
         return id;
     }
 
-    public String getUsername() {
-        return username;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public Address getAddress() {
+        return address;
     }
-
-
 }

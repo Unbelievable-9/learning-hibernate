@@ -1,5 +1,7 @@
 package info.unbelievable9.models.simple;
 
+import info.unbelievable9.models.common.Constants;
+
 import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
@@ -18,7 +20,7 @@ import java.util.Set;
 public class Item implements Serializable {
 
     @Id
-    @GeneratedValue(generator = "ID_GENERATOR")
+    @GeneratedValue(generator = Constants.ID_GENERATOR)
     protected Long id;
 
     @NotNull

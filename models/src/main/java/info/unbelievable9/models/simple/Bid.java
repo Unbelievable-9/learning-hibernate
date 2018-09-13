@@ -1,5 +1,7 @@
 package info.unbelievable9.models.simple;
 
+import info.unbelievable9.models.common.Constants;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -12,7 +14,7 @@ import java.io.Serializable;
 public class Bid implements Serializable {
 
     @Id
-    @GeneratedValue(generator = "ID_GENERATOR")
+    @GeneratedValue(generator = Constants.ID_GENERATOR)
     protected Long id;
 
     @Transient

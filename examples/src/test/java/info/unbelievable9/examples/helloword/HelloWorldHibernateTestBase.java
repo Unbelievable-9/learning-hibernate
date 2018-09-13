@@ -30,7 +30,7 @@ public class HelloWorldHibernateTestBase extends TransactionManagerTestBase {
         StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder();
 
         serviceRegistryBuilder
-                .applySetting("hibernate.connection.datasource", "helloWorldDS")
+                .applySetting("hibernate.connection.datasource", "basicDS")
                 .applySetting("hibernate.format_sql", "true")
                 .applySetting("hibernate.use_sql_comments", "true")
                 .applySetting("hibernate.hbm2ddl.auto", "create-drop");

@@ -7,7 +7,7 @@
                             http://xmlns.jcp.org/xml/ns/persistence_2_1.xsd">
 
     <persistence-unit name="HelloWorldPU">
-        <jta-data-source>helloWorldDS</jta-data-source>
+        <jta-data-source>basicDS</jta-data-source>
         <class>info.unbelievable9.models.helloword.Message</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
@@ -24,7 +24,7 @@
     </persistence-unit>
 
     <persistence-unit name="SimpleXMLCompletePU">
-        <jta-data-source>helloWorldDS</jta-data-source>
+        <jta-data-source>basicDS</jta-data-source>
         <mapping-file>simple/jpa/MappingsComplete.xml</mapping-file>
         <mapping-file>simple/jpa/Queries.xml</mapping-file>
 
@@ -35,7 +35,7 @@
     </persistence-unit>
 
     <persistence-unit name="SimpleXMLOverridePU">
-        <jta-data-source>helloWorldDS</jta-data-source>
+        <jta-data-source>basicDS</jta-data-source>
         <mapping-file>simple/jpa/MappingsOverride.xml</mapping-file>
         <mapping-file>simple/jpa/Queries.xml</mapping-file>
         <class>info.unbelievable9.models.helloword.Message</class>
@@ -49,7 +49,7 @@
     </persistence-unit>
 
     <persistence-unit name="SimpleHibernatePU">
-        <jta-data-source>helloWorldDS</jta-data-source>
+        <jta-data-source>basicDS</jta-data-source>
         <mapping-file>simple/jpa/Queries.xml</mapping-file>
         <class>info.unbelievable9.models.simple.Item</class>
         <class>info.unbelievable9.models.other.Item</class>
@@ -57,8 +57,20 @@
 
         <properties>
             <property name="hibernate.use_identifier_rollback" value="true"/>
+
+            <!-- Ignore
             <property name="hibernate.physical_naming_strategy" value="info.unbelievable9.shared.util.CENamingStrategy"/>
+            -->
         </properties>
+    </persistence-unit>
+    
+    <persistence-unit name="AdvancedPU">
+        <jta-data-source>basicDS</jta-data-source>
+        <class>info.unbelievable9.models.advanced.User</class>
+        <class>info.unbelievable9.models.advanced.Item</class>
+        <class>info.unbelievable9.models.advanced.Bid</class>
+        <class>info.unbelievable9.models.advanced.ItemBidSummary</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
     </persistence-unit>
 
 </persistence>

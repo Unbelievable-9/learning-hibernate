@@ -1,5 +1,7 @@
 package info.unbelievable9.models.other;
 
+import info.unbelievable9.models.common.Constants;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,6 +16,6 @@ import javax.persistence.Table;
 public class Item {
 
     @Id
-    @GeneratedValue(generator = "ID_GENERATOR")
+    @GeneratedValue(generator = Constants.ID_GENERATOR)
     private Long id;
 }
