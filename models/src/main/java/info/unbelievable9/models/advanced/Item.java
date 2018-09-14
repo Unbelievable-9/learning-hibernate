@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * Author     : Unbelievable9
  **/
 @Entity
-@Table(name = "ITEMS")
+@Table(name = "items")
 public class Item {
 
     @Id
@@ -18,7 +18,7 @@ public class Item {
     protected Long id;
 
     @Access(AccessType.PROPERTY)
-    @Column(name = "ITEM_NAME")
+    @Column(name = "item_name")
     protected String name;
 
     @NotNull

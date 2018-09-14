@@ -17,9 +17,15 @@
         </packages>
     </test>
 
-    <test name="Simple">
+    <test name="Simple" enabled="false">
         <packages>
             <package name="info.unbelievable9.examples.simple"/>
+        </packages>
+    </test>
+
+    <test name="Advanced">
+        <packages>
+            <package name="info.unbelievable9.examples.advanced"/>
         </packages>
     </test>
 

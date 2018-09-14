@@ -13,7 +13,7 @@ import java.math.BigDecimal;
  **/
 @Entity
 @Immutable
-@Table(name = "BIDS")
+@Table(name = "bids")
 public class Bid {
 
     @Id
@@ -24,7 +24,7 @@ public class Bid {
     protected BigDecimal amount;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "ITEM_ID")
+    @JoinColumn(name = "item_id")
     protected Item item;
 
     public Long getId() {

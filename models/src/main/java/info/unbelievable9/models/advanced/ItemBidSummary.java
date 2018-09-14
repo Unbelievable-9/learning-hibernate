@@ -14,12 +14,12 @@ import javax.persistence.Id;
 @Entity
 @Immutable
 @Subselect(
-        value = "select i.ID as ITEMID, i.ITEM_NAME as NAME, " +
-                "count(b.ID) as NUMBEROFBIDS " +
-                "from ITEM i left join BID b on i.ID = b.ITEM_ID " +
-                "group by i.ID, i.ITEM_NAME"
+        value = "select i.id as itemId, i.item_name as name, " +
+                "count(b.id) as numberOfBids " +
+                "from items i left join bids b on i.id = b.item_id " +
+                "group by i.id, i.item_name"
 )
-@Synchronize({"Item", "Bid"})
+@Synchronize({"items", "bids"})
 public class ItemBidSummary {
 
     @Id

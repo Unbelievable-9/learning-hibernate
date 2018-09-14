@@ -9,8 +9,8 @@ import org.testng.annotations.*;
  **/
 public class JPATestBase extends TransactionManagerTestBase {
 
-    public String persistenceUnitName;
-    public String[] hibernateResources;
+    private String persistenceUnitName;
+    private String[] hibernateResources;
     public JPASetup jpaSetup;
 
     public void configurePersistenceUnit() {
@@ -23,10 +23,16 @@ public class JPATestBase extends TransactionManagerTestBase {
         this.hibernateResources = hibernateResources;
     }
 
+    /**
+     * For override
+     */
     public void afterJPABootstrap() {
 
     }
 
+    /**
+     * For override
+     */
     public void beforeJPAClose() {
 
     }
