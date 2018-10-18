@@ -21,6 +21,7 @@ public class Bid {
     protected Long id;
 
     @NotNull
+    @Column(nullable = false)
     protected BigDecimal amount;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)

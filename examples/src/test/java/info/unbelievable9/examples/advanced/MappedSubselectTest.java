@@ -29,6 +29,7 @@ public class MappedSubselectTest extends JPATestBase {
         Item item = new Item();
         item.setName("Test item");
         item.setDescription("This is a test item.");
+        item.setMetricWeight(BigDecimal.valueOf(100.0));
         entityManager.persist(item);
 
         // Generate bids
@@ -65,6 +66,16 @@ public class MappedSubselectTest extends JPATestBase {
             EntityManager entityManager = jpaSetup.createEntityManger();
 
             {
+                Item item = entityManager.find(Item.class, itemId);
+
+                Assert.assertEquals("This is a te...", item.getShortDescription());
+                Assert.assertTrue(item.getAverageBidAmount().compareTo(BigDecimal.ZERO) > 0);
+                Assert.assertTrue(BigDecimal.valueOf(100.0).compareTo(item.getMetricWeight()) > 0);
+            }
+
+            entityManager.clear();
+
+            {
                 ItemBidSummary itemBidSummary = entityManager.find(ItemBidSummary.class, itemId);
 
                 Assert.assertEquals(itemBidSummary.getName(), "AUCTION: Test item");
@@ -90,6 +101,22 @@ public class MappedSubselectTest extends JPATestBase {
 
                 Assert.assertEquals(itemBidSummary.getName(), "AUCTION: New test item");
                 Assert.assertEquals(itemBidSummary.getNumberOfBids(), 10);
+            }
+
+            userTransaction.commit();
+            entityManager.close();
+
+            userTransaction.begin();
+            entityManager = jpaSetup.createEntityManger();
+
+            {
+                Item item = entityManager.find(Item.class, itemId);
+                item.setName("Updated test item");
+                item.setDescription("This item is updated");
+
+                entityManager.persist(item);
+
+                Assert.assertNotNull(item.getLastModified());
             }
 
             userTransaction.commit();
